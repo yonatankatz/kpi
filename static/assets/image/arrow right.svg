@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="13px" viewBox="0 0 8 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Path</title>
+    <g id="Mocks" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard-List-HiFi-Collapsed" transform="translate(-306.000000, -611.000000)" fill="#B8482C" fill-rule="nonzero">
+            <g id="Group" transform="translate(295.000000, 576.000000)">
+                <path d="M15.5381675,38.2398797 C15.2072326,37.9200401 14.6727604,37.9200401 14.3418256,38.2398797 L9.25100892,43.1893787 C9.00736128,43.4243225 8.93326536,43.7788244 9.06326987,44.087591 C9.19327438,44.3963576 9.50177909,44.5985871 9.84493753,44.6 L20.0265708,44.6 C20.3712743,44.6019349 20.6829298,44.4009305 20.8151136,44.0914097 C20.9472975,43.7818889 20.8737336,43.4253795 20.6289841,43.1893787 L15.5381675,38.2398797 Z" id="Path" transform="translate(14.940000, 41.300000) scale(1, -1) rotate(90.000000) translate(-14.940000, -41.300000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,38 @@
+{
+    "id": 11,
+    "parentId": 0,
+    "name": "algotext",
+    "children": [
+        {
+            "id": 111,
+            "parentId": 11,
+            "name": "engineering",
+            "children": []
+        },
+        {
+            "id": 112,
+            "parentId": 11,
+            "name": "marketing",
+            "children": [
+                {
+                    "id": 114,
+                    "parentId": 112,
+                    "name": "US-marketing",
+                    "children": []
+                },
+                {
+                    "id": 115,
+                    "parentId": 112,
+                    "name": "Europe-marketing",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "id": 113,
+            "parentId": 11,
+            "name": "product",
+            "children": []
+        }
+    ]
+}

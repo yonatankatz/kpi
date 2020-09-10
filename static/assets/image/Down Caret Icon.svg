@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="7px" viewBox="0 0 12 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Down Caret Icon</title>
+    <g id="Mocks" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.65">
+        <g id="Define-KPI-HiFi-Expanded-Disabled" transform="translate(-470.000000, -425.000000)" fill="#262626" fill-rule="nonzero">
+            <g id="step-2" transform="translate(193.000000, 263.000000)">
+                <g id="Group-10" transform="translate(52.000000, 125.000000)">
+                    <g id="Dropdown-Button" transform="translate(0.000000, 22.000000)">
+                        <path d="M226.278242,15.458687 C225.984935,15.1666415 225.510412,15.1676648 225.218366,15.4609725 C224.926321,15.7542803 224.927344,16.2288029 225.220652,16.5208484 L230.483863,21.7614085 C230.776776,22.0530613 231.250522,22.0524903 231.542732,21.7601322 L236.780627,16.5195721 C237.07323,16.2268203 237.073109,15.7522967 236.780357,15.4596938 C236.487605,15.1670909 236.013082,15.1672116 235.720479,15.4599633 L231.011381,20.1714569 L226.278242,15.458687 Z" id="Down-Caret-Icon"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

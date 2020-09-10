@@ -1,0 +1,87 @@
+[
+    {
+      "department": "Test",
+      "departmentId": 0,
+       "goal": {
+          "goalId": 123,
+          "description": "Reduce churn rate by improving product UX",
+          "parentGoalId": 0
+       },
+       "measurements": [
+          {
+             "measureId": 456,
+             "description": "Increase NPS score by 20",
+             "target": "20",
+             "type": "number",
+             "actual": 0
+          },
+          {
+             "measureId": 789,
+             "description": "No support tickets on UX",
+             "dueDate": 86400000,
+             "type": "flag"
+          },
+          {
+             "measureId": 589,
+             "description": "No support tickets on UX",
+             "dueDate": 86400000,
+             "type": "flag"
+          }
+       ],
+       "actions": [
+          {
+             "actionId": 136,
+             "text": "Shorten the setup time to 3 minutes"
+          },
+          {
+             "actionId": 246,
+             "text": "Make the system run faster"
+          }
+       ],
+       "children": []
+    },
+    {
+      "department": "Test",
+      "departmentId": 0,
+       "goal": {
+          "goalId": 124,
+          "description": "reduce churn rate by improving product UX2",
+          "parentGoalId": 0
+       },
+       "measurements": [
+          {
+             "measureId": 459,
+             "description": "Increase NPS score by 20",
+             "type": "number",
+             "target": "20",
+             "actual": "10"
+          },
+          {
+             "measureId": 777,
+             "description": "No support tickets on UX1",
+             "type": "number",
+             "target": "60",
+             "actual": "15"
+          },
+          {
+             "measureId": 590,
+             "description": "No support tickets on UX",
+             "type": "flag",
+             "dueDate": 123456789,
+             "actual": "done"
+          }
+       ],
+       "actions": [
+          {
+             "actionId": 236,
+             "text": "shorten the setup time to 3 minutes"
+          },
+          {
+             "actionId": 346,
+             "text": "make the system run faster",
+             "done": true
+          }
+       ],
+       "children": []
+    }
+ ]

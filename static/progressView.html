@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress View</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="assets/image/favicon.png" rel="shortcut icon" type="image/png">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/plugins/Chart.min.js"></script>
+    <script src="assets/js/plugins/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="assets/js/plugins/toastr.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body class="font">
+    <div class="headerColor">
+        <a href="dashboard.html">
+            <img src="assets/image/algotext logo.svg" alt="logo" class="p-2 ml-2">
+        </a>
+    </div>
+    <div class="container-fluid">
+        <div class="row wrapper flex-column flex-sm-row">
+            <aside class="col-12 col-md-12 col-lg-3 col-16 p-0 bgColor flex-shrink-1">
+                <div class="container horizontalScroll">
+                    <form id="DeptForm" class="mb-2">
+                        <div class="mt-2 mt-lg-5 d-flex justify-content-center">
+                            <ul>
+                                <li class="position-relative radioButton" id="addNewDepartment">
+                                    <input type="radio" id="dep1" name="radio" value="1" checked="checked">
+                                    <label for="dep" class="px-2 d-flex align_center mb-0 rounded_5 border-0 width-13 text-left height-2_5 bgDropdown deptHover overflow-hidden">
+                                        <!-- <img src="assets/image/arrow right.svg" alt=""> -->
+                                        <i class="fa fa-caret-right width-1" aria-hidden="true"  id="toggleArrow"></i>
+                                        <span class="ml-2 overflow-hidden height_1_4 width-10 cursor_pointer textBreak" id="departmentToggle" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></span>
+                                        <!-- <span id="changeDeptParent" class="cursor_pointer pl-1"><i class="fa fa-arrow-up text-white" aria-hidden="true"></i></span> -->
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="collapse show bgColor" id="collapseExample">
+                            <div class="d-flex justify-content-center">
+                                <div class="pl-2 width-15">
+                                        <ul class="navBar pl-5" id="department">
+                                            <!-- <li class="p-1 position-relative radioButton"></li> -->
+                                        </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </aside>
+            <main class="col-12 col-md-12 col-lg-9 col-83 px-0 bgDropdown position-relative min-vh-100">
+                <div class="container-fluid p-5">
+                    <div class="d-lg-flex justify-content-between pb-4">
+                        <div>
+                            <p class="font-weight-bold font-1_5 mb-0" id="viewDept"></p>
+                        </div>
+                        <div>
+                            <button class="bgColor rounded_5 border-0 text-left height-2_5 text-white width-15 buttonAdd img_center" id="changeView">
+                                <a href="dashboard.html" class="text-white text-decoration-none">
+                                    <img src="assets/image/list icon.svg" alt="" class="pl-1"><span class="pl-2 line_height">Change to Detailed View</span>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row py-3" id="gridView">
+                    </div>
+                    <div class="row d-none mr-0 pl-1 pl-sm-3" id="listView">
+                        <div class="col-md-12 px-0">
+                            <ul class="tree" id="listViewStructure">
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row d-none px-3" id="NotFound">
+                        <div class="col-md-12 rounded_5 bg-white py-4 box_shadow_light">
+                            <p class="font-weight-500 font_light mb-0">No goals were set for the selected department</p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end mt-3 mb-3 mb-sm-5 mb-9">
+                        <p class="text-white bgColor text-white border-0 width-17 height-2_5 rounded_5 buttonAdd align_center d-flex justify-content-center cursor_pointer" id="addNewGoal">Add new Goal</p>
+                    </div>
+                </div>
+                <div class="headerColor position-absolute footer_bottom">
+                    <p class="text_light text-center mb-0 py-3 px-1 font_light">This product aims to create a convenient platform to support the methodology described at The <span class="text-blue font"><a href="https://medium.com/@katzyonatan/the-kpis-of-kpis-815ba9a60c77" class="text-decoration-none" target="_blank">KPIs of the KPIs</a></span> blog post.</p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="editKPI" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center widthFull" id="ModalLabel">Progress Update</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="progressModal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="">
+                    <div class="border_light rounded_5 bg_light p-3">
+                        <p class="font-weight-bold text-center" id="KPIProgressDes">KPI:</p>
+                        <div id="typeNumber" class="d-none">
+                            <div class="form-group">
+                                <label class="font-weight-500">Current Target:</label>
+                                <div class="row">
+                                    <div class="col-md-10 pb-2 pb-sm-0">
+                                        <div class="p-2 border_light rounded_5 align_center form_bg_light">
+                                            <p class="mb-0 word_wrap" id="currentTarget"></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 d-flex content-end">
+                                        <button class="form_bg_light border-0 width-2_5 height-2_5 rounded_5 buttonAdd align_center p-2 text-center mb-0" id="enableProgress"><img src="assets/image/pencil icon.svg" ></button>
+                                    </div>
+                                </div>
+                                <!-- <div class="d-md-flex p-2 border_light rounded_5 border_left mb-3 align_center KPIdes w-100 form_bg_light">
+                                    <div class="mr-auto w-65">
+                                        <p class="mb-0 word_wrap" id="currentTarget"></p>
+                                    </div>
+                                    <div class="d-flex content-end">
+                                        <button class="buttonBg" id="enableProgress"><img src="assets/image/pencil icon.svg" ></button>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <label for="progress" class="font-weight-500">Current Progress:</label>
+                                        <input type="number" class="form-control rounded_5 form_bg_light" id="progress" placeholder="Enter a progress" disabled min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group d-flex content-end actionCheckbox">
+                                <input type="checkbox" id="numberKPI" name="numberCheckbox">
+                                <!-- <label for="numberKPI" class="flagKPI border-0 width-6 height-2_5 rounded_5 buttonAdd align_center p-2 text-center bg-white mb-0">Done</label> -->
+                            </div>
+                        </div>
+                        <div id="typeFlag" class="d-none">
+                            <div class="row mb-3 d-flex align_center">
+                                <div class="col-md-9 pb-2 pb-sm-0">
+                                    <div class="p-2 border_light rounded_5 align_center">
+                                        <p class="mb-0">Current Progress</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 d-flex content-end actionCheckbox">
+                                    <input type="checkbox" id="flagKPI" name="flagCheckbox">
+                                    <label for="flagKPI" class="border-0 width-6 height-2_5 rounded_5 buttonAdd align_center p-2 text-center bg_white mb-0">Done</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <p class="font-weight-bold text-center" id="actionProgressTitle">Action Items:</p>
+                            <div id="actionDoneList">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-3 d-flex content-end">
+                        <button type="submit" class="bgColor text-white border-0 width-6 height-2_5 rounded_5 buttonAdd" id="saveProgress">Save</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div id="dialog" title="Confirmation Required" style="z-index: 1050!important;">
+        <h5>This operation cannot be undo.</h5>
+        <p>Are you sure you want to continue?</p>
+    </div>
+
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/chart.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/apiCall.js"></script>
+    <script src="assets/js/progressView.js"></script>
+</body>
+</html>

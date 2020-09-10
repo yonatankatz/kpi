@@ -1,0 +1,42 @@
+{
+    "department": "engineering",
+    "goal": {
+        "goalId": 123,
+        "description": "reduce churn rate by improving product UX",
+        "parentGoalId": 300
+    },
+    "measurements": [
+        {
+            "measureId": 456,
+            "description": "Increase NPS score by 20",
+            "type": "number",
+            "target": "20",
+            "actual": "10"
+        },
+        {
+            "measureId": 789,
+            "description": "No support tickets on UX",
+            "type": "flag",
+            "dueDate": 123456789
+        },
+        {
+            "measureId": 589,
+            "description": "No support tickets on UX",
+            "type": "flag",
+            "dueDate": 123456789,
+            "actual": "done"
+        }
+    ],
+    "actions": [
+        {
+            "actionId": 136,
+            "text": "shorten the setup time to 3 minutes"
+        },
+        {
+            "actionId": 246,
+            "text": "make the system run faster",
+            "done": true
+        }
+    ],
+    "children": []
+}

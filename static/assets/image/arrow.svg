@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="5px" viewBox="0 0 9 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Path</title>
+    <g id="Mocks" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard-Visual-HiFi-Parent-KPI" transform="translate(-50.000000, -98.000000)" fill="#B8482C" fill-rule="nonzero">
+            <g id="inner-page" transform="translate(43.000000, 88.000000)">
+                <path d="M11.9531572,10.181727 C11.7024489,9.93942432 11.2975458,9.93942432 11.0468375,10.181727 L7.19015828,13.9313475 C7.00557672,14.1093352 6.94944345,14.3778973 7.04793172,14.6118114 C7.14641998,14.8457254 7.38013568,14.9989296 7.64010419,15 L15.3534627,15 C15.6146017,15.0014658 15.8507044,14.8491898 15.9508437,14.6147043 C16.0509829,14.3802188 15.9952527,14.110136 15.8098364,13.9313475 L11.9531572,10.181727 Z" id="Path" transform="translate(11.500000, 12.500000) scale(1, -1) translate(-11.500000, -12.500000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

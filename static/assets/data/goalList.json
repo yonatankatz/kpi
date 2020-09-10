@@ -1,0 +1,12 @@
+{
+    "goal": [
+        {
+            "goalId": 300,
+            "text": "Reduce churn rate"
+        },
+        {
+            "goalId": 301,
+            "text": "Make the system run faster"
+        }
+    ]
+}
