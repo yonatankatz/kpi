@@ -82,7 +82,7 @@ func handleRequest(w http.ResponseWriter, req *http.Request) {
 	if req.Method == http.MethodDelete {
 		mutex.Lock()
 		os.Remove(filename)
-		mutex.RUnlock();
+		mutex.Unlock();
 		fmt.Fprintf(w, "{\"message\":\"deleted\"}")
 	}
 }
@@ -111,13 +111,15 @@ func initRequest(w http.ResponseWriter, req *http.Request) {
 			}
 		}
 		bodyAsString = bodyAsString[:(len(bodyAsString) - 1)] + "}"
-		fmt.Fprintf(w, bodyAsString)
+		bodyAsString = strings.ReplaceAll(bodyAsString, "%", "%%")
+		fmt.Fprintf(w, bodyAsString)		
 	}
 	mutex.Unlock()
 }
 
 
 func main() {
+	fmt.Println("starting...")
 	argsWithoutProg := os.Args[1:]
 	var port = "8090"
 	for _, element := range argsWithoutProg {

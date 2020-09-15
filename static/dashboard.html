@@ -1,98 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="assets/image/favicon.png" rel="shortcut icon" type="image/png">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="assets/image/favicon.png"
+      rel="shortcut icon"
+      type="image/png"
+    />
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/plugins/Chart.min.js"></script>
     <script src="assets/js/plugins/toastr.min.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="assets/js/plugins/toastr.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-</head>
-<body class="font">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body class="font">
     <div class="headerColor">
-        <a href="dashboard.html">
-            <img src="assets/image/algotext logo.svg" alt="logo" class="p-2 ml-2">
-        </a>
+      <a href="dashboard.html">
+        <img src="assets/image/algotext logo.svg" alt="logo" class="p-2 ml-2" />
+      </a>
     </div>
     <div class="container-fluid">
-        <div class="row wrapper flex-column flex-sm-row">
-            <div class="col-12 col-md-12 col-lg-3 col-16 p-0 bgColor flex-shrink-1">
-                <div class="container horizontalScroll">
-                    <form id="DeptForm" class="mb-2">
-                        <div class="mt-2 mt-lg-5 d-flex justify-content-center">
-                            <ul>
-                                <li class="position-relative radioButton" id="addNewDepartment">
-                                    <input type="radio" id="dep1" name="radio" value="1" checked="checked">
-                                    <label for="dep" class="px-2 d-flex align_center mb-0 rounded_5 border-0 width-13 text-left height-2_5 bgDropdown deptHover overflow-hidden">
-                                        <!-- <img src="assets/image/arrow right.svg" alt=""> -->
-                                        <i class="fa fa-caret-right width-1 d-none" aria-hidden="true" id="toggleArrow"></i>
-                                        <span class="ml-2 overflow-hidden height_1_4 width-10 cursor_pointer textBreak" id="departmentToggle" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Management</span>
-                                        <!-- <span id="changeDeptParent" class="cursor_pointer pl-1"><i class="fa fa-arrow-up text-white" aria-hidden="true"></i></span> -->
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="collapse show bgColor" id="collapseExample">
-                            <div class="d-flex justify-content-center">
-                                <div class="pl-2 width-15">
-                                        <ul class="navBar pl-5" id="department">
-                                            <!-- <li class="p-1 position-relative radioButton"></li> -->
-                                        </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+      <div class="row wrapper flex-column flex-sm-row">
+        <div class="col-12 col-md-12 col-lg-3 col-16 p-0 bgColor flex-shrink-1">
+          <div class="container horizontalScroll">
+            <form id="DeptForm" class="mb-2">
+              <div class="mt-2 mt-lg-5 d-flex justify-content-center">
+                <ul>
+                  <li
+                    class="position-relative radioButton"
+                    id="addNewDepartment"
+                  >
+                    <input
+                      type="radio"
+                      id="dep1"
+                      name="radio"
+                      value="1"
+                      checked="checked"
+                    />
+                    <label
+                      for="dep"
+                      class="px-2 d-flex align_center mb-0 rounded_5 border-0 width-13 text-left height-2_5 bgDropdown deptHover overflow-hidden"
+                    >
+                      <!-- <img src="assets/image/arrow right.svg" alt=""> -->
+                      <i class="" aria-hidden="true" id="toggleArrow"></i>
+                      <span
+                        class="ml-2 overflow-hidden height_1_4 width-10 cursor_pointer textBreak"
+                        id="departmentToggle"
+                        data-target="#collapseExample"
+                        aria-expanded="false"
+                        aria-controls="collapseExample"
+                        >Management</span
+                      >
+                      <!-- <span id="changeDeptParent" class="cursor_pointer pl-1"><i class="fa fa-arrow-up text-white" aria-hidden="true"></i></span> -->
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div class="collapse show bgColor" id="collapseExample">
+                <div class="d-flex justify-content-center">
+                  <div class="pl-2 width-15">
+                    <ul class="navBar pl-5" id="department">
+                      <!-- <li class="p-1 position-relative radioButton"></li> -->
+                    </ul>
+                  </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-12 col-lg-9 col-83 px-0 bgDropdown position-relative min-vh-100">
-                <div class="container-fluid p-5">
-                    <div class="d-lg-flex justify-content-between pb-4">
-                        <div>
-                            <p class="font-weight-bold font-1_5 mb-0" id="viewDept"></p>
-                        </div>
-                        <div>
-                            <!--<button id="refresh" class="bgColor rounded_5 border-0 height-2_5 width-5 mb-sm-0 mb-2 buttonAdd"><i class="fa fa-refresh text-white" aria-hidden="true"></i><span class="text-white pl-2">Reset</span></button>-->
-                            <button class="bgColor rounded_5 border-0 text-left height-2_5 text-white width-15 buttonAdd" id="changeView">
-                                <a href="progressView.html" class="text-white text-decoration-none img_center">
-                                    <img src="assets/image/grid icon.svg" alt="" class="pl-1"><span class="pl-2 line_height">Change to Track Progress</span>
-                                </a>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="row mr-0 pl-1 pl-sm-3" id="listView">
-                        <div class="col-md-12 px-0">
-                            <ul class="tree" id="listViewStructure">
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="row d-none px-3" id="NotFound">
-                        <div class="col-md-12 rounded_5 bg-white py-4 box_shadow_light">
-                            <p class="font-weight-500 font_light mb-0">No goals were set for the selected department</p>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-end mt-3 mb-3 mb-sm-5 mb-9">
-                        <p class="text-white bgColor text-white border-0 width-17 height-2_5 rounded_5 buttonAdd align_center d-flex justify-content-center cursor_pointer" id="addNewGoal">Add new Goal</p>
-                    </div>
-                </div>
-                <div class="headerColor position-absolute footer_bottom">
-                    <p class="text_light text-center mb-0 py-3 px-1 font_light">This product aims to create a convenient platform to support the methodology described at The <span class="text-blue font"><a href="https://medium.com/@katzyonatan/the-kpis-of-kpis-815ba9a60c77" class="text-decoration-none" target="_blank">KPIs of the KPIs</a></span> blog post.</p>
-                </div>
-            </div>
+              </div>
+            </form>
+          </div>
         </div>
+        <div
+          class="col-12 col-md-12 col-lg-9 col-83 px-0 bgDropdown position-relative min-vh-100"
+        >
+          <div class="container-fluid p-5">
+            <div class="d-lg-flex justify-content-between pb-4">
+              <div>
+                <p class="font-weight-bold font-1_5 mb-0" id="viewDept"></p>
+              </div>
+              <div>
+                <!--<button id="refresh" class="bgColor rounded_5 border-0 height-2_5 width-5 mb-sm-0 mb-2 buttonAdd"><i class="fa fa-refresh text-white" aria-hidden="true"></i><span class="text-white pl-2">Reset</span></button>-->
+                <button
+                  class="bgColor rounded_5 border-0 text-left height-2_5 text-white width-15 buttonAdd"
+                  id="changeView"
+                >
+                  <a
+                    href="progressView.html"
+                    class="text-white text-decoration-none img_center"
+                  >
+                    <img
+                      src="assets/image/grid icon.svg"
+                      alt=""
+                      class="pl-1"
+                    /><span class="pl-2 line_height"
+                      >Change to Track Progress</span
+                    >
+                  </a>
+                </button>
+              </div>
+            </div>
+            <div class="row mr-0 pl-1 pl-sm-3" id="listView">
+              <div class="col-md-12 px-0">
+                <ul class="tree" id="listViewStructure"></ul>
+              </div>
+            </div>
+
+            <div class="row d-none px-3" id="NotFound">
+              <div class="col-md-12 rounded_5 bg-white py-4 box_shadow_light">
+                <p class="font-weight-500 font_light mb-0">
+                  No goals were set for the selected department
+                </p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-end mt-3 mb-3 mb-sm-5 mb-9">
+              <p
+                class="text-white bgColor text-white border-0 width-17 height-2_5 rounded_5 buttonAdd align_center d-flex justify-content-center cursor_pointer"
+                id="addNewGoal"
+              >
+                Add new Goal
+              </p>
+            </div>
+          </div>
+          <div class="headerColor position-absolute footer_bottom">
+            <p class="text_light text-center mb-0 py-3 px-1 font_light">
+              This product aims to create a convenient platform to support the
+              methodology described at The
+              <span class="text-blue font"
+                ><a
+                  href="https://medium.com/@katzyonatan/the-kpis-of-kpis-815ba9a60c77"
+                  class="text-decoration-none"
+                  target="_blank"
+                  >KPIs of the KPIs</a
+                ></span
+              >
+              blog post.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div id="dialog" title="Confirmation Required" style="z-index: 1050!important;">
-        <h5>This operation cannot be undo.</h5>
-        <p>Are you sure you want to continue?</p>
+    <div
+      id="dialog"
+      title="Confirmation Required"
+      style="z-index: 1050 !important"
+    >
+      <h5>This operation cannot be undo.</h5>
+      <p>Are you sure you want to continue?</p>
     </div>
 
     <script src="assets/js/utils.js"></script>
@@ -100,5 +165,5 @@
     <script src="assets/js/common.js"></script>
     <script src="assets/js/apiCall.js"></script>
     <script src="assets/js/dashboard.js"></script>
-</body>
+  </body>
 </html>
